@@ -1,0 +1,43 @@
+# ============================================
+# 多智能体实验报告生成系统 —— 依赖清单
+# 适用入口: agents/src/main.py
+# Python >= 3.10
+# ============================================
+
+# --- 核心框架 ---
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-openai>=0.2.0
+langgraph>=0.2.0
+openai>=1.12.0
+python-dotenv>=1.0.0
+
+# --- RAG / 向量存储 ---
+chromadb>=0.5.0
+langchain-chroma>=0.2.0
+langchain-community>=0.3.0
+langchain-text-splitters>=0.3.0
+
+# 本地 embedding（当 EMBEDDING_PROVIDER=local 时需要）
+langchain-huggingface>=0.1.0
+sentence-transformers>=3.0.0
+
+# --- 文件解析与数据处理 ---
+PyMuPDF>=1.24.0
+python-docx>=1.0.0
+pandas>=2.0.0
+
+# --- 报告导出 ---
+fpdf2>=2.7.0
+docx2pdf>=0.1.8
+
+# Windows 下 docx->pdf 的 COM 兜底转换（仅 Windows 需要）
+pywin32>=306; platform_system == "Windows"
+
+# --- Web 检索（优先 ddgs，兼容旧包） ---
+ddgs>=9.14.4
+duckduckgo-search>=5.0.0
+
+# 注:
+# 1) 当前项目已移除 OCR 主逻辑，不再需要 paddleocr/paddlepaddle。
+# 2) 若仅使用云端 embedding（DashScope），可不安装 langchain-huggingface/sentence-transformers。

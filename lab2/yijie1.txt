@@ -1,0 +1,1 @@
+On(tony,mike) On(mike,john) Green(tony) ~Green(john) ~On(x,y);~Green(x);Green(y)
